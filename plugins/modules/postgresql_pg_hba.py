@@ -363,7 +363,7 @@ class PgHba(object):
                     # split into line and comment
                     line = line.strip()
                     comment = None
-                    if '#' in line:
+                    if ('#' in line) and not ('"' in line):
                         line, comment = line.split('#', 1)
                         if comment == '':
                             comment = None
